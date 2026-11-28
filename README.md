@@ -18,3 +18,6 @@ A complete, reproducible computational chemistry and AI evaluation portfolio com
 - **SMILES Valence & Hallucination Auditing:** Programmatic syntax/valence sanitization and two-layer `InChIKey` comparison (14-character connectivity vs. full 27-character stereochemistry) to detect invalid structures or dropped stereocenters in LLM outputs.
 - **Stereochemical & Chiral Center Inspection:** Automated CIP `(R)/(S)` assignment and unassigned stereocenter detection (`Chem.FindMolChiralCenters`).
 - **Reaction Rule & Mass-Balance Auditing:** Forward organic reaction verification via `SMARTS` templates (`rdChemReactions`) and heavy-atom mass-balance checks for RLHF grading and scientific benchmarks.
+### Drug-Likeness ML Classifier (`Drug_Likeness_ML_Classifier.ipynb`)
+- **Goal:** Predict drug-likeness using RDKit descriptors, 1024-bit Morgan fingerprints, and a `RandomForestClassifier` on ChEMBL compounds.
+- **Curation & Split:** Filtered invalid SMILES, kept largest fragments, deduplicated canonical SMILES, and evaluated with a Bemis–Murcko scaffold split (`GroupShuffleSplit`) to avoid analog leakage.
